@@ -565,16 +565,9 @@ departments = {
             "San Bernardo del Viento":{"dane_code":"23675"},
         }
     },
-    "bogotá, d.c.":{
-        "dane_code":"11",
-        "municipalities":{
-            "Bogotá":{"dane_code":"11001"},
-        }
-    },
     "Cundinamarca":{
         "dane_code":"25",
         "municipalities":{
-            "Bogotá":{"dane_code":"11001"},
             "Albán":{"dane_code":"25019"},
             "Anolaima":{"dane_code":"25040"},
             "Chía":{"dane_code":"25175"},

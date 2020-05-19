@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: danecode
+Version: 0.0.5
+Summary: A simple util to get dane codes by department and municipality
+Home-page: https://github.com/moship
+Author: Moship
+Author-email: opensource@moship.io
+License: UNKNOWN
+Description: # Dane code
+        
+        ```python
+        
+        import danecode
+        
+        #you can have typo errors in the arguments
+        
+        department = "Santnder"
+        municipality = "Riongro"
+        
+        municipality_data = danecode.get_data(department, municipality)
+        
+        #Returns
+        municipality_data = {
+            'department': 'Santander',
+            'department_code': '68',
+            'municipality': 'Rionegro',
+            'municipality_code': '68615'
+        }
+        
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
