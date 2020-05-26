@@ -912,6 +912,7 @@ departments = {
             "Pamplonita":{"dane_code":"54520"},
             "Cúcuta":{"dane_code":"54001"},
             "El Carmen":{"dane_code":"54245"},
+            "los patios":{"dane_code":"54405"},
         }
     },
     "Putumayo":{
