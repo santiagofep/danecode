@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="danecode",
-    version="0.0.5",
+    version="0.0.6",
     author="Moship",
     author_email="opensource@moship.io",
     description="A simple util to get dane codes by department and municipality",
