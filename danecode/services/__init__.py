@@ -90,7 +90,7 @@ def get_department_by_coordinadora_location(department_code):
         "QDIO": "Quindio",
         "ATL": "Atlantico",
         "CORD": "Cordoba",
-        "Putumayo": "P/MAYO",
+        "P/MAYO": "Putumayo",
         "SUCRE": "Sucre",
         "VICH": "Vichada",
         "GUAI": "Guainia",

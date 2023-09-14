@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="danecode",
-    version="0.2.1",
+    version="0.2.2",
     author="santiagofep",
     description="A simple util to get dane codes by department and municipality",
     long_description=long_description,
