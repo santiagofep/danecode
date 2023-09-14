@@ -5,19 +5,18 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="danecode",
-    version="0.0.6",
-    author="Moship",
-    author_email="opensource@moship.io",
+    version="0.0.7",
+    author="santiagofep",
     description="A simple util to get dane codes by department and municipality",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/moship",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    package_data={"danecode": ["files/**", "services/**"]},
     python_requires=">=3.6",
     install_requires=["jellyfish", "pandas", "unidecode"],
 )
