@@ -1,3 +1,4 @@
+LICENSE
 README.md
 setup.py
 danecode/__init__.py
@@ -7,3 +8,4 @@ danecode.egg-info/SOURCES.txt
 danecode.egg-info/dependency_links.txt
 danecode.egg-info/requires.txt
 danecode.egg-info/top_level.txt
+danecode/services/__init__.py

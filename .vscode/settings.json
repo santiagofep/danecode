@@ -1,3 +1,3 @@
 {
-    "python.pythonPath": "/Users/santiagofernandez/.local/share/virtualenvs/dane_code-sAhLaasL/bin/python"
+  "python.defaultInterpreterPath": "../../django_project/venv/bin/python"
 }
