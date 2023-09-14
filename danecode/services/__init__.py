@@ -96,7 +96,7 @@ def get_department_by_coordinadora_location(department_code):
         "GUAI": "Guainia",
         "AMAZ": "Amazonas",
         "V/PES": "Vaupes",
-        "S/ANDRES": "San Andres y Providencia",
+        "S/ANDRES": "SAN ANDRÉS, PROVIDENCIA Y SANTA CATALINA",
         "G/VIARE": "Guaviare",
     }
 
