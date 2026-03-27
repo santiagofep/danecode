@@ -31,7 +31,7 @@ def _load_centros_poblados(departamento_code):
     return _centros_poblados_cache[departamento_code]
 
 
-def get_departament(received_departamento):
+def get_department(received_departamento: str) -> dict:
     received_departamento = unidecode(received_departamento.upper())
 
     departamentos = _load_departamentos()
@@ -47,7 +47,7 @@ def get_departament(received_departamento):
     return min_distance["departamento"]
 
 
-def get_center_of_population(received_centro_poblado, departamento_code):
+def get_center_of_population(received_centro_poblado: str, departamento_code: str) -> dict:
     received_centro_poblado = unidecode(received_centro_poblado.upper())
 
     centros_poblados = _load_centros_poblados(departamento_code)
@@ -64,14 +64,14 @@ def get_center_of_population(received_centro_poblado, departamento_code):
     return min_distance["centro_poblado"]
 
 
-def separate_coordinadora_department_code_and_city(location):
+def separate_coordinadora_department_code_and_city(location: str) -> tuple[str, str]:
     city, department_code = location.split("(")
     if department_code:
         department_code = department_code.replace(")", "")
     return city.lower(), department_code
 
 
-def get_department_by_coordinadora_location(department_code):
+def get_department_by_coordinadora_location(department_code: str) -> str | None:
     departments = {
         "ANT": "Antioquia",
         "N/STDER": "Norte de Santander",
