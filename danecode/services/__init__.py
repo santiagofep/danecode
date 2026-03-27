@@ -9,14 +9,32 @@ import jellyfish
 logger = logging.getLogger("__name__")
 module_dir = os.path.dirname(__file__)
 
+_departamentos_cache = None
+_centros_poblados_cache = {}
+
+
+def _load_departamentos():
+    global _departamentos_cache
+    if _departamentos_cache is None:
+        file_path = os.path.join(module_dir, "../files/departamentos.csv")
+        _departamentos_cache = pd.read_csv(file_path, converters={"code": str}).to_dict("records")
+    return _departamentos_cache
+
+
+def _load_centros_poblados(departamento_code):
+    if departamento_code not in _centros_poblados_cache:
+        file_path = os.path.join(module_dir, f"../files/centros_poblados/{departamento_code}.csv")
+        _centros_poblados_cache[departamento_code] = pd.read_csv(
+            file_path,
+            converters={"codigo_departamento": str, "codigo_municipio": str, "codigo_centro_poblado": str},
+        ).to_dict("records")
+    return _centros_poblados_cache[departamento_code]
+
 
 def get_departament(received_departamento):
     received_departamento = unidecode(received_departamento.upper())
 
-    file_path = os.path.join(module_dir, "../files/departamentos.csv")
-
-    data = pd.read_csv(file_path, converters={"code": str})
-    departamentos = data.to_dict("records")
+    departamentos = _load_departamentos()
 
     min_distance = {"value": float("inf"), "departamento": {}}
     for departamento in departamentos:
@@ -31,19 +49,8 @@ def get_departament(received_departamento):
 
 def get_center_of_population(received_centro_poblado, departamento_code):
     received_centro_poblado = unidecode(received_centro_poblado.upper())
-    file_path = os.path.join(
-        module_dir, f"../files/centros_poblados/{departamento_code}.csv"
-    )
 
-    data = pd.read_csv(
-        file_path,
-        converters={
-            "codigo_departamento": str,
-            "codigo_municipio": str,
-            "codigo_centro_poblado": str,
-        },
-    )
-    centros_poblados = data.to_dict("records")
+    centros_poblados = _load_centros_poblados(departamento_code)
 
     min_distance = {"value": float("inf"), "centro_poblado": {}}
     for centro_poblado in centros_poblados:
