@@ -31,7 +31,7 @@ def _load_centros_poblados(departamento_code):
     return _centros_poblados_cache[departamento_code]
 
 
-def get_department(received_departamento: str) -> dict:
+def get_departament(received_departamento: str) -> dict:
     received_departamento = unidecode(received_departamento.upper())
 
     departamentos = _load_departamentos()

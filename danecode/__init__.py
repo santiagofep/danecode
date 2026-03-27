@@ -4,7 +4,7 @@ import jellyfish
 
 from .country_data import departments
 from .services import (
-    get_department,
+    get_departament,
     get_center_of_population,
     get_department_by_coordinadora_location,
     separate_coordinadora_department_code_and_city,
@@ -67,7 +67,7 @@ def coordinadora_center_of_population(coordinadora_location: str) -> dict:
     department = get_department_by_coordinadora_location(department_code)
     if department is None:
         raise ValueError(f"Unknown coordinadora department code: {department_code}")
-    departamento_data = get_department(department)
+    departamento_data = get_departament(department)
     center_of_population = get_center_of_population(
         center_of_population_name, departamento_data["code"]
     )
