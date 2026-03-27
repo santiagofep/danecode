@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "danecode"
+version = "0.2.11"
+description = "A simple util to get dane codes by department and municipality"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.6"
+authors = [
+    { name = "santiagofep" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "jellyfish",
+    "pandas",
+    "unidecode",
+]
+
+[tool.setuptools.packages.find]
+include = ["danecode*"]
+
+[tool.setuptools.package-data]
+danecode = ["files/**", "services/**"]
